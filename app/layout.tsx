@@ -25,6 +25,9 @@ export default function RootLayout({
       variables: {colorPrimary:'#624cf5'}
     }}>
       <html lang="en">
+      <head>
+          <link rel="icon" href="/Public/facicon.ico" />
+        </head>
         <body className={cn("font_IBMPlex antialiased", IBMPlex.variable)}>
           {children}
         </body>
