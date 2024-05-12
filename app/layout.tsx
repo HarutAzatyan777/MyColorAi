@@ -4,14 +4,16 @@ import "./globals.css";
 import { cn } from "../lib/utils";
 import { ClerkProvider } from '@clerk/nextjs'
 
-const IBMPlex = IBM_Plex_Sans({
+import "./globals.css";
+
+const IBMPlex = IBM_Plex_Sans({ 
   subsets: ["latin"],
-  weight: ['400', "500", "600", "700"],
-  variable: '--font-ibm-plex' // Adjust the variable name to start with '--'
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-ibm-plex'
 });
 
 export const metadata: Metadata = {
-  title: "Mycolor",
+  title: "MyColors",
   description: "AI-powered image generator",
 };
 
@@ -22,13 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider appearance={{
-      variables: {colorPrimary:'#624cf5'}
+      variables: { colorPrimary: '#624cf5' }
     }}>
       <html lang="en">
-      <head>
-          <link rel="icon" href="/Public/facicon.ico" />
-        </head>
-        <body className={cn("font_IBMPlex antialiased", IBMPlex.variable)}>
+        <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
           {children}
         </body>
       </html>
