@@ -2,7 +2,7 @@ import { Webhook } from 'svix';
 import { headers } from 'next/headers';
 import { WebhookEvent } from '@clerk/nextjs/server';
 import { createUser } from '../../../../lib/actions/user.actions'; // Import createUser function
-import { connect } from '../../../../lib/database/mongoose';
+import { connectToDatabase } from '../../../../lib/database/mongoose';
 
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
@@ -57,7 +57,7 @@ export async function POST(req: Request) {
 
   // Create user using the payload
   try {
-    await connect(); // Connect to the database
+    await connectToDatabase(); // Connect to the database
     await createUser(payload); // Create the user
   } catch (error) {
     console.log(error);
