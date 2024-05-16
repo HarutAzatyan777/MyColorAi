@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../../../../components/Shared/Header'
+import Header from '@/components/Shared/Header'
 import { transformationTypes } from '@/constants'
 import TransformationForm from '@/components/Shared/TransformationForm';
 import { auth } from '@clerk/nextjs/server';
