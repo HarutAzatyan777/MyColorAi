@@ -1,3 +1,5 @@
+"use client"
+
 import { dataUrl, debounce, download, getImageSize } from '@/lib/utils'
 import { CldImage, getCldImageUrl } from 'next-cloudinary'
 import { PlaceholderValue } from 'next/dist/shared/lib/get-img-props'

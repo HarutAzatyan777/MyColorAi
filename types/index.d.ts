@@ -129,8 +129,9 @@ declare type CreateUserParams = {
     image: any;
     type: string;
     title: string;
-    transformationConfig: Transformations | null;
+    transformationConfig: Transformations | null; // Updated this line
     isTransforming: boolean;
     hasDownload?: boolean;
-    setIsTransforming?: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsTransforming?: React.Dispatch<React.SetStateAction<boolean>>; // Updated this line
   };
+  
