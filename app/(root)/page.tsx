@@ -12,22 +12,23 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
-      <section className="home">
+     <section className="home">
         <h1 className="home-heading">
-          Unleash Your Creative Vision with MyColors
+          Transform Your Creativity with MyColors
         </h1>
+        <p className="home-description">
+          Unleash the full potential of your creative projects with MyColors. Our innovative tools and resources empower you to bring your artistic vision to life. Whether you're a designer, artist, or enthusiast, MyColors provides everything you need to enhance your creativity and achieve professional-quality results. Join a community of creators who trust MyColors to elevate their work. Discover the difference with MyColors and take your creativity to the next level.
+        </p>
         <ul className="flex-center w-full gap-20">
           {navLinks.slice(1, 5).map((link) => (
-            <Link
-              key={link.route}
-              href={link.route}
-              className="flex-center flex-col gap-2"
-            >
-              <li className="flex-center w-fit rounded-full bg-white p-4">
-                <Image src={link.icon} alt="image" width={24} height={24} />
-              </li>
-              <p className="p-14-medium text-center text-white">{link.label}</p>
-            </Link>
+            <li key={link.route} className="flex-center flex-col gap-2">
+              <Link href={link.route} className="flex-center flex-col gap-2">
+                <div className="flex-center w-fit rounded-full bg-white p-4">
+                  <Image src={link.icon} alt={link.label} width={24} height={24} />
+                </div>
+                <p className="p-14-medium text-center text-white">{link.label}</p>
+              </Link>
+            </li>
           ))}
         </ul>
       </section>
