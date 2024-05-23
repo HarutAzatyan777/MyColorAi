@@ -224,7 +224,10 @@
   }
 
   .home-heading {
-    @apply h1-semibold max-w-[500px] flex-wrap text-center text-white shadow-sm;
+    @apply h1-semibold h-40 max-w-[500px] flex-wrap text-center text-blue-500 shadow-sm;
+  }
+  .home-subheading{
+    @apply   flex-wrap text-center text-ellipsis shadow-sm;
   }
 
   /* Credits Page */
@@ -328,7 +331,7 @@
   }
 
   .sidebar-nav_element {
-    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:bg-green-100 hover:shadow-inner;
+    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-lg bg-cover  transition-all hover:bg-green-100 hover:shadow-inner;
   }
 
   .sidebar-link {
