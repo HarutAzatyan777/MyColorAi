@@ -4,6 +4,7 @@ import { getAllImages } from "@/lib/actions/image.actions";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "Home - MyColors",
@@ -33,6 +34,26 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+
       <section className="home">
         <h1 className="home-heading">
           Transform Your Creative Projects with MyColors
@@ -60,13 +81,12 @@ const Home = async ({ searchParams }: SearchParamProps) => {
       </section>
 
       <section className="ad-banner">
-  <div className="flex-center bg-yellow-500 p-4 rounded-lg">
-    <p className="text-lg font-bold">
-      Effortlessly generate colors in seconds with our Color Tool at <a href="https://mycolors.pro/" className="underline" target="_blank">mycolors.pro</a>
-    </p>
-  </div>
-</section>
-
+        <div className="flex-center bg-yellow-500 p-4 rounded-lg">
+          <p className="text-lg font-bold">
+            Effortlessly generate colors in seconds with our Color Tool at <a href="https://mycolors.pro/" className="underline" target="_blank">mycolors.pro</a>
+          </p>
+        </div>
+      </section>
 
       <section className="sm:mt-12">
         <Collection 
